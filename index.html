@@ -35,6 +35,20 @@
 			for	<a href="http://dublinjs.org/">Dublin JavaScript Group</a> (<a href="http://twitter.com/dublinjs">@dublinjs</a>), 2011-11-22</p>
 		</footer>
 	</section>
+	
+	<section id="overview" class="slide">
+		
+		<h2>Overview</h2>
+		
+		<ul>
+			<li>We'll set up a JsTestDriver server and some tests</li>
+			<li>We'll take a look at JsTestDriver workflow</li>
+			<li>We'll quickly review sinon.js basic functionality</li>
+			<li>We'll then improve <em>this</em> presentation by adding new features in a TDD fashion,
+				which will demonstrate how sinon.js lets us to replace XHR and timers</li>
+		</ul>
+	
+	</section>
 
 	<section id="get-jstestdriver" class="slide">
 		
@@ -262,15 +276,21 @@ dominykas@Kari:~/jstd-sinonjs-intro-20111122/drop-here$</pre></li>
 		
 		<h2>Test doubles in sinon.js</h2>
 
-		<h3><code>spy()</code>, <code>spy(myFunc)</code>, <code>spy(object, "method")</code></h3>
-		<p>Wraps around a method (if provided) and records invocations.</p>
+		<div class="slide" id="sinon-overview-spy">
+			<h3><code>spy()</code>, <code>spy(myFunc)</code>, <code>spy(object, "method")</code></h3>
+			<p>Wraps around a method (if provided) and records invocations.</p>
+		</div>
 		
-		<h3><code>stub()</code>, <code>stub(object, "method")</code>, 
-			<code>stub(object, "method", func)</code>, <code>stub(obj)</code></h3>
-		<p>Replaces a method (if provided).</p>
+		<div class="slide" id="sinon-overview-stub">
+			<h3><code>stub()</code>, <code>stub(object, "method")</code>, 
+				<code>stub(object, "method", func)</code>, <code>stub(obj)</code></h3>
+			<p>Replaces a method (if provided).</p>
+		</div>
 		
-		<h3><code>mock(obj)</code></h3>
-		<p>Creates a mocked objects with built-in expectations.</p>
+		<div class="slide" id="sinon-overview-mock">
+			<h3><code>mock(obj)</code></h3>
+			<p>Creates a mocked objects with built-in expectations.</p>
+		</div>
 		
 		
 	</section>
@@ -369,20 +389,32 @@ Examples.Example07 = function(callbackObj)
 		
 	</section>
 	
-	<section id="sinon-xhr" class="slide">
-		<h2>XHR</h2>
+	<section id="building-console" class="slide">
+		
+		<h2>Enough of boring examples...</h2>
+	
+		<h3>At the moment...</h3>
+		<ul>
+			<li>The titles of the slides with code are draggable</li>
+			<li>When the title is dropped from Chrome into a folder - a <code>tmp.js</code> is created</li>
+			<li>So far, I've been switching windows to run tests and observe results</li>
+		</ul>
+		<h3>But instead I'd like to...</h3>
+		<ul>
+			<li>Drag the files into a folder, and run JsTestDriver automatically or with a keyboard shortcut</li>
+			<li>I'd then like to press 'r' to display a results console</li>
+			<li>The console should AJAX load <code>results.txt</code> from <code>drop-here</code> folder</li>
+			<li>If the file is not present or empty or tests haven't completed - I'd like to automatically refresh in 100ms</li>
+			<li>The console should close itself when 'r' is pressed again</li>
+		</ul>
+		<p>Let's build a console, which would display JsTestDriver output inside this presentation.</p>
+	
 	</section>
 	
-	<section id="sinon-server" class="slide">
-		<h2>Server</h2>
-	</section>
+	<section id="console-interface" class="slide">
+		
+		<h2>The interface</h2>
 	
-	<section id="sinon-date" class="slide">
-		<h2>Date/time</h2>
-	</section>
-	
-	<section id="sinon-timers" class="slide">
-		<h2>Timers</h2>
 	</section>
 
 	<section id="acknowledgements" class="slide">
@@ -405,7 +437,14 @@ Examples.Example07 = function(callbackObj)
 		
 		<div class="codeblock test">
 			<h3>Test</h3>
-			<textarea class="code" mode="javascript"></textarea>
+			<textarea class="code" mode="javascript">TestCase("Playing around", sinon.testCase({
+
+  "test playing around": function()
+  {
+    assertTrue(false);
+  }
+
+}));</textarea>
 		</div>
 		
 		<div class="codeblock src">
