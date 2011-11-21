@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to JsTestDriver and sinon.js</title>
+	<meta charset="utf-8"/>
+
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/core/deck.core.css">
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/extensions/hash/deck.hash.css">
+	
+	<!-- Theme CSS files (menu swaps these out) -->
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/themes/style/swiss.css">
+	<link rel="stylesheet" href="imakewebthings-deck.js-b4cd216/themes/transition/horizontal-slide.css">
+
+	<!-- specific to this deck -->
+	<link rel="stylesheet" href="my.css" />
+	
+	<!-- code mirror -->
+	<link rel="stylesheet" href="iros-deck.js-codemirror-v0.0.3-7-gd39921d/deck.codemirror.css">	
+	<link rel="stylesheet" href="iros-deck.js-codemirror-v0.0.3-7-gd39921d/themes/default.css">	
+	
+	<!-- modernizr -->
+	<script src="imakewebthings-deck.js-b4cd216/modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+
+	<section id="title" class="slide">
+		<h1>Introduction to JsTestDriver and sinon.js</h1>
+		<footer>
+			<p>By <a href="http://www.dominykas.com">Dominykas Blyžė</a> (<a href="http://twitter.com/dymonaz">@dymonaz</a>)
+			for	<a href="http://dublinjs.org/">Dublin JavaScript Group</a> (<a href="http://twitter.com/dublinjs">@dublinjs</a>), 2011-11-22</p>
+		</footer>
+	</section>
+
+	<section id="get-jstestdriver" class="slide">
+		
+		<h2>Start JsTestDriver</h2>
+		
+		<p>download, extract, setup environment variable</p>
+		<p>blank test harness - config depends on env var</p>
+		<p>capture the browser (strict vs quirks) (issue 79, 141)</p>
+		
+	</section>
+
+	<section id="setup-files" class="slide">
+		
+		<h2>Set up files, folders and configs</h2>
+		<p>Can also run from Eclipse</p>
+		<p>http://code.google.com/p/js-test-driver/wiki/XUnitCompatibility</p>
+		
+	</section>
+
+	<section id="first-test" class="slide">
+		
+		<h2>First test</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example01.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Examples.Example01", {
+
+  "test Example01() should return true": function()
+  {
+
+  }
+
+});
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example01.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">if (typeof(Examples)==='undefined') Examples={};
+
+Examples.Example01 = function()
+{
+
+};			
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="jstestdriver-asserts" class="slide">
+		
+		<h2>JsTestDriver asserts</h2>
+		<p>can also use jasmine, qunit, yui</p>
+		
+	</section>
+
+	<section id="jstestdriver-expectasserts" class="slide">
+		
+		<h2 draggable="true">JsTestDriver asserts: expectAsserts()</h2>
+
+		<div class="codeblock test">
+			<h3><a href="examples/test/example02.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Examples.Example02", {
+
+  "test Example02() should call first arg with true": function()
+  {
+
+  }
+
+});
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example02.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">if (typeof(Examples)==='undefined') Examples={};
+
+Examples.Example02 = function(callback)
+{
+
+};			
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="jstestdriver-debugging" class="slide">
+		
+		<h2>JsTestDriver debugging</h2>
+		<ul>
+			<li>Set breakpoints in the captured browsers</li>
+			<li>Use <code>jstestdriver.console</code></li>
+			<li>Use <code>--captureConsole</code></li>
+		</ul>
+		<div class="codeblock test">
+			<h3><a href="examples/test/example03.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Examples.Example03", {
+
+  "test Example03() should return true": function()
+  {
+    assertTrue("Result", Examples.Example03());
+  }
+
+});
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example03.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">if (typeof(Examples)==='undefined') Examples={};
+
+Examples.Example03 = function()
+{
+  return true;
+};			
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="jstestdriver-dochtml" class="slide">
+		
+		<h2>HTML for your tests</h2>
+
+		<div class="codeblock test">
+			<h3><a href="examples/test/example04.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Examples.Example04", {
+
+  "test Example04() should return value of input#test": function()
+  {
+
+  }
+
+});
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example04.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">if (typeof(Examples)==='undefined') Examples={};
+
+Examples.Example04 = function()
+{
+
+};			
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="jstestdriver-uncool-stuff" class="slide">
+		
+		<h2>The uncool stuff</h2>
+		<p>--reset; crash/restart</p>
+		<p>capture the browser (strict vs quirks) (issue 79, 141)</p>
+		
+	</section>
+
+	<section id="test-doubles" class="slide">
+		
+		<h2>Test doubles</h2>
+		<ul>
+			<li>force a code path</li>
+			<li>test the "back" interface / interaction between components</li>
+			<li>test to force errors</li>
+		</ul>
+		
+	</section>
+	
+	<section id="sinon-spy" class="slide">
+		<h2>sinon.spy()</h2>
+	</section>
+	
+	<section id="sinon-stub" class="slide">
+		<h2>sinon.stub()</h2>
+	</section>
+	
+	<section id="sinon-mock" class="slide">
+		<h2>sinon.mock()</h2>
+	</section>
+	
+	<section id="spy-vs-stub-vs-mock" class="slide">
+		
+		<h2>spy() vs stub() vs mock()</h2>
+	
+	</section>
+	
+	<section id="sinon-assert" class="slide">
+		<h2>sinon.assert</h2>
+	</section>
+	
+	<section id="sinon-xhr" class="slide">
+		<h2>XHR</h2>
+	</section>
+	
+	<section id="sinon-server" class="slide">
+		<h2>Server</h2>
+	</section>
+	
+	<section id="sinon-date" class="slide">
+		<h2>Date/time</h2>
+	</section>
+	
+	<section id="sinon-timers" class="slide">
+		<h2>Timers</h2>
+	</section>
+
+	<section id="acknowledgements" class="slide">
+		
+		<h2>Acknowledgements</h2>
+		<ul>
+			<li><a href="http://code.google.com/p/js-test-driver/">JsTestDriver</a></li>
+			<li><a href="http://sinonjs.org/">sinon.js</a>, <a href="http://twitter.com/cjno">@cjno</a></li>
+			<li><a href="http://imakewebthings.github.com/deck.js/">deck.js</a>, <a href="http://twitter.com/foodgoesinmouth">@foodgoesinmouth</a></li>
+			<li><a href="https://github.com/iros/deck.js-codemirror">Deck.js-CodeMirror Extension</a>, <a href="http://twitter.com/ireneros">@ireneros</a></li>
+			<li><a href="http://codemirror.net/">CodeMirror</a>, <a href="http://twitter.com/marijnjh">@marijnjh</a></li>
+		</ul>
+		
+	</section>
+
+	<section id="thanks" class="slide">
+		
+		<h2 draggable="true">Thank you</h2>
+		<p>Questions?</p>
+		
+		<div class="codeblock test">
+			<h3>Test</h3>
+			<textarea class="code" mode="javascript"></textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3>Code</h3>
+			<textarea class="code" mode="javascript"></textarea>
+		</div>
+		
+	</section>
+
+
+
+
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<script src="examples/lib/jquery-1.7.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="imakewebthings-deck.js-b4cd216/core/deck.core.js"></script>
+<script src="imakewebthings-deck.js-b4cd216/extensions/hash/deck.hash.js"></script>
+<script src="imakewebthings-deck.js-b4cd216/extensions/menu/deck.menu.js"></script>
+<script src="imakewebthings-deck.js-b4cd216/extensions/goto/deck.goto.js"></script>
+<script src="imakewebthings-deck.js-b4cd216/extensions/status/deck.status.js"></script>
+<script src="imakewebthings-deck.js-b4cd216/extensions/navigation/deck.navigation.js"></script>
+
+<!-- Base codemiror code -->
+<script src="iros-deck.js-codemirror-v0.0.3-7-gd39921d/codemirror.js"></script>
+
+<!-- Syntax highlighting Modes -->
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<script src="iros-deck.js-codemirror-v0.0.3-7-gd39921d/mode/javascript/javascript.js"></script>
+<script src="iros-deck.js-codemirror-v0.0.3-7-gd39921d/mode/xml/xml.js"></script>
+<script src="iros-deck.js-codemirror-v0.0.3-7-gd39921d/mode/css/css.js"></script>
+<script src="iros-deck.js-codemirror-v0.0.3-7-gd39921d/mode/htmlmixed/htmlmixed.js"></script>
+
+<!-- Plugin code -->
+<script src="iros-deck.js-codemirror-v0.0.3-7-gd39921d/deck.codemirror.js"></script>
+
+<!-- Specific to this page -->
+<script src="my.js"></script>
+<script>
+$(function() { $.deck('.slide'); });
+</script>
+
+
+</body>
+</html>

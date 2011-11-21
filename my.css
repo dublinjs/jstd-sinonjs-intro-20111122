@@ -1,0 +1,55 @@
+.clearfix:after
+{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.deck-container .codeslidemenu
+{
+	margin-bottom: 1em;
+	text-align: right;
+	font-size: 50%;
+}
+
+button.save
+{
+	float:right;
+	font-size: 30%;
+}
+
+.codeblock .fill
+{
+	font-size: 50%;
+	color: #888;
+}
+.codeblock .fill:hover
+{
+	color: #000;
+}
+
+.slide footer
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+#results
+{
+	background-color: #000;
+	color: #fff;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	z-index: 99;
+	display: none;
+	padding: 1em;
+	overflow: auto;
+	box-shadow: 0 0 2px 2px #000;
+}
+

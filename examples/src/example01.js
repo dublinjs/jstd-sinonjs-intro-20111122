@@ -1,0 +1,4 @@
+function MyExample()
+{
+  return true;
+}
