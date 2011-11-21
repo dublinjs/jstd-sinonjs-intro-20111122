@@ -61,8 +61,21 @@
 	<section id="setup-files" class="slide">
 		
 		<h2>Set up files, folders and configs</h2>
-		<p>Can also run from Eclipse</p>
-		<p>http://code.google.com/p/js-test-driver/wiki/XUnitCompatibility</p>
+		
+		<h3><code>jsTestDriver.conf</code></h3>
+		<ul>
+			<li>YAML file (whatever that is...)</li>
+			<li>Include your libraries, source and tests to run, can also serve static files (e.g. CSS)</li>
+			<li><a href="http://code.google.com/p/js-test-driver/wiki/ConfigurationFile">Config documentation</a></li>
+		</ul>
+		<pre>load:
+  - sinon-1.2.0.js
+  - ../imakewebthings-deck.js-b4cd216/jquery-1.7.min.js
+  - src/*.js
+  - test/*.js</pre>
+  
+  		<h3>Run tests</h3>
+  		<pre>java -jar ~/Downloads/JsTestDriver-1.3.3d.jar --tests all --server http://127.0.0.1:4224 --verbose --reset</pre>
 		
 	</section>
 
@@ -100,6 +113,7 @@ Examples.Example01 = function()
 		
 		<h2>JsTestDriver asserts</h2>
 		<p>can also use jasmine, qunit, yui</p>
+		<p>http://code.google.com/p/js-test-driver/wiki/XUnitCompatibility</p>
 		
 	</section>
 
@@ -307,7 +321,7 @@ Examples.Example04 = function()
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
 
 
-<script src="examples/lib/jquery-1.7.min.js"></script>
+<script src="imakewebthings-deck.js-b4cd216/jquery-1.7.min.js"></script>
 
 <!-- Deck Core and extensions -->
 <script src="imakewebthings-deck.js-b4cd216/core/deck.core.js"></script>
