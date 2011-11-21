@@ -112,8 +112,19 @@ Examples.Example01 = function()
 	<section id="jstestdriver-asserts" class="slide">
 		
 		<h2>JsTestDriver asserts</h2>
-		<p>can also use jasmine, qunit, yui</p>
-		<p>http://code.google.com/p/js-test-driver/wiki/XUnitCompatibility</p>
+		<ul>
+			<li><code>assert[Not]Equals([msg], expected, actual)</code></li>
+			<li><code>assert[Not]Same([msg], expected, actual)</code></li>
+			<li><code>assert[Not]Null([msg], actual)</code></li>
+			<li><code>assert[Not]NaN([msg], actual)</code></li>
+			<li><a href="http://code.google.com/p/js-test-driver/wiki/Assertions">...and the rest of them</a></li>
+		</ul>
+		
+		<div class="slide" id="jstestdriver-bridges">
+			<h3>If you don't like them...</h3>
+			<p>There are bridges for Jasmine, QUnit, YUI Test, etc.</p>
+			<p><a href="http://code.google.com/p/js-test-driver/wiki/XUnitCompatibility">Read the wiki (XUnitCompatibility)</a> and Google...</p>
+		</div>
 		
 	</section>
 
@@ -127,7 +138,7 @@ Examples.Example01 = function()
 
   "test Example02() should call first arg with true": function()
   {
-
+    
   }
 
 });
@@ -140,16 +151,15 @@ Examples.Example01 = function()
 
 Examples.Example02 = function(callback)
 {
-
-};			
-</textarea>
+  
+};</textarea>
 		</div>
 		
 	</section>
 
 	<section id="jstestdriver-debugging" class="slide">
 		
-		<h2>JsTestDriver debugging</h2>
+		<h2 draggable="true">JsTestDriver debugging</h2>
 		<ul>
 			<li>Set breakpoints in the captured browsers</li>
 			<li>Use <code>jstestdriver.console</code></li>
@@ -161,7 +171,7 @@ Examples.Example02 = function(callback)
 
   "test Example03() should return true": function()
   {
-    assertTrue("Result", Examples.Example03());
+    assertEquals("Result", true, Examples.Example03());
   }
 
 });
@@ -175,7 +185,7 @@ Examples.Example02 = function(callback)
 Examples.Example03 = function()
 {
   return true;
-};			
+};
 </textarea>
 		</div>
 		
@@ -183,7 +193,7 @@ Examples.Example03 = function()
 
 	<section id="jstestdriver-dochtml" class="slide">
 		
-		<h2>HTML for your tests</h2>
+		<h2 draggable="true">HTML for your tests</h2>
 
 		<div class="codeblock test">
 			<h3><a href="examples/test/example04.js" class="fill">Complete</a> Test</h3>
@@ -191,7 +201,7 @@ Examples.Example03 = function()
 
   "test Example04() should return value of input#test": function()
   {
-
+    
   }
 
 });
@@ -204,8 +214,8 @@ Examples.Example03 = function()
 
 Examples.Example04 = function()
 {
-
-};			
+  
+};
 </textarea>
 		</div>
 		
@@ -214,8 +224,21 @@ Examples.Example04 = function()
 	<section id="jstestdriver-uncool-stuff" class="slide">
 		
 		<h2>The uncool stuff</h2>
-		<p>--reset; crash/restart</p>
-		<p>capture the browser (strict vs quirks) (issue 79, 141)</p>
+		<p>It might be related to my setup, but I found these problems:</p>
+		<ul>
+			<li>Always run your tests with <code>--reset</code> - it forces the JS files to be reloaded in
+				the browser and bypass the cache.</li>
+			<li>Sometimes the browser gets stuck and <code>--reset</code> keeps on trying to reload, but 
+				never completes. A server restart is the only way out... Looks like this:
+				<pre style="background-color:#000;color:#ccc;">Chrome: Reset
+Chrome: Reset
+.. snip 50 lines ..
+^C
+dominykas@Kari:~/jstd-sinonjs-intro-20111122/drop-here$</pre></li>
+			<li>Default capture mode is quirks - star
+				<a href="http://code.google.com/p/js-test-driver/issues/detail?id=79">issue 79</a> 
+				and <a href="http://code.google.com/p/js-test-driver/issues/detail?id=141">issue 141</a></li>
+		</ul>
 		
 	</section>
 
