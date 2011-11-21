@@ -245,34 +245,128 @@ dominykas@Kari:~/jstd-sinonjs-intro-20111122/drop-here$</pre></li>
 	<section id="test-doubles" class="slide">
 		
 		<h2>Test doubles</h2>
+
 		<ul>
-			<li>force a code path</li>
-			<li>test the "back" interface / interaction between components</li>
-			<li>test to force errors</li>
+			<li>Used to force a code path in the SUT</li>
+			<li>Used to avoid calling external services
+				<ul>
+					<li>I like to think of this as the "back" side of the "interface" we're testing.</li>
+				</ul>
+			</li>
+			<li>Used to force errors and test their handling</li>
 		</ul>
 		
 	</section>
 	
-	<section id="sinon-spy" class="slide">
-		<h2>sinon.spy()</h2>
-	</section>
-	
-	<section id="sinon-stub" class="slide">
-		<h2>sinon.stub()</h2>
-	</section>
-	
-	<section id="sinon-mock" class="slide">
-		<h2>sinon.mock()</h2>
-	</section>
-	
-	<section id="spy-vs-stub-vs-mock" class="slide">
+	<section id="sinon-overview" class="slide">
 		
-		<h2>spy() vs stub() vs mock()</h2>
-	
+		<h2>Test doubles in sinon.js</h2>
+
+		<h3><code>spy()</code>, <code>spy(myFunc)</code>, <code>spy(object, "method")</code></h3>
+		<p>Wraps around a method (if provided) and records invocations.</p>
+		
+		<h3><code>stub()</code>, <code>stub(object, "method")</code>, 
+			<code>stub(object, "method", func)</code>, <code>stub(obj)</code></h3>
+		<p>Replaces a method (if provided).</p>
+		
+		<h3><code>mock(obj)</code></h3>
+		<p>Creates a mocked objects with built-in expectations.</p>
+		
+		
 	</section>
 	
-	<section id="sinon-assert" class="slide">
-		<h2>sinon.assert</h2>
+	<section id="spy-example" class="slide">
+		
+		<h2 draggable="true">A boring sinon.spy() example</h2>
+
+		<div class="codeblock test">
+			<h3><a href="examples/test/example05.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Examples.Example05", {
+
+  "test Example05() should call first arg with true": function()
+  {
+    
+  }
+
+});
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example05.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">if (typeof(Examples)==='undefined') Examples={};
+
+Examples.Example05 = function(callback)
+{
+  
+};
+</textarea>
+		</div>
+			
+	</section>
+	
+	<section id="spy-example" class="slide">
+		
+		<h2 draggable="true">A boring sinon.stub() example</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example06.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Examples.Example06", {
+
+  "test Example06() should alert": function()
+  {
+    
+  }
+
+});
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example06.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">if (typeof(Examples)==='undefined') Examples={};
+
+Examples.Example06 = function(callback)
+{
+  
+};
+</textarea>
+		</div>
+			
+		<ul>
+			<li>Wrap your test cases with sinon.testCase() to automatically <code>stub.restore()</code></li>
+		</ul>
+		
+	</section>
+	
+	<section id="mock-example" class="slide">
+		
+		<h2 draggable="true">A boring sinon.mock() example</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example07.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Examples.Example07", sinon.testCase({
+
+  "test Example07() should call first arg's method": function()
+  {
+    
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example07.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">if (typeof(Examples)==='undefined') Examples={};
+
+Examples.Example07 = function(callbackObj)
+{
+  
+};
+</textarea>
+		</div>
+		
 	</section>
 	
 	<section id="sinon-xhr" class="slide">
