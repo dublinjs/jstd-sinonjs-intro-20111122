@@ -1,8 +1,8 @@
-TestCase("Example", {
+TestCase("Examples.Example01", {
 
-  "test MyExample() should return true": function()
+  "test Example01() should return true": function()
   {
-    assertEquals("return value", true, MyExample());
+    assertEquals(true, Examples.Example01());
   }
 
 });
