@@ -38,11 +38,23 @@
 
 	<section id="get-jstestdriver" class="slide">
 		
-		<h2>Start JsTestDriver</h2>
+		<h2>Start the JsTestDriver server</h2>
 		
-		<p>download, extract, setup environment variable</p>
-		<p>blank test harness - config depends on env var</p>
-		<p>capture the browser (strict vs quirks) (issue 79, 141)</p>
+		<ul>
+			<li>Download from <a href="http://code.google.com/p/js-test-driver/downloads/list">http://code.google.com/p/js-test-driver/downloads/list</a></li>
+			<li>Start the server: 
+				<pre>java -jar ~/Downloads/JsTestDriver-1.3.3d.jar --port 4224</pre>
+			</li>
+			<li>Point your browser(s) to <a href="http://127.0.0.1:4224/">http://127.0.0.1:4224/</a></li>
+			<li>Capture your browser(s)
+				<ul class="slide" id="jstestdriver-quirks">
+					<li>Quirks mode is default :(</li>
+					<li>You likely want to capture in "Strict mode"</li>
+					<li>Star <a href="http://code.google.com/p/js-test-driver/issues/detail?id=79">issue 79</a> 
+						and <a href="http://code.google.com/p/js-test-driver/issues/detail?id=141">issue 141</a></li>
+				</ul>
+			</li>
+		</ul>
 		
 	</section>
 
