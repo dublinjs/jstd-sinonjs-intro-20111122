@@ -1,6 +1,6 @@
 This presentation is for http://dublinjs.org/ meetup on 22/Nov/2011.
 
-Slides best viewed in Chrome.
+Slides best viewed in Chrome WITH "--allow-file-access-from-files"
 
 --
 Content under imakewebthings-deck.js-b4cd216/ is Copyright (c) 2011 Caleb Troughton (MIT license)
