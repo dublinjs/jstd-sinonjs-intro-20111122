@@ -23,10 +23,9 @@ jQuery is Copyright (c) 2011 John Resig, http://jquery.com/ (MIT license)
 http://jquery.com/
 
 --
-The slides and examples are Copyright (c) 2011 Dominykas Blyze, http://www.dominykas.com/ (MIT license)
 The MIT License
 
-Copyright (c) 2011 Dominykas Blyze, http://www.dominykas.com/ (MIT license)
+Copyright (c) 2011 Dominykas Blyze, http://www.dominykas.com/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
