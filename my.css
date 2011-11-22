@@ -45,7 +45,7 @@ button.save
 	left: 10%;
 	width: 80%;
 	height: 80%;
-	position: absolute;
+	position: fixed;
 	z-index: 99;
 	display: none;
 	padding: 1em;

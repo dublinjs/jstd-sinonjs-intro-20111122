@@ -414,9 +414,289 @@ Examples.Example07 = function(callbackObj)
 	<section id="console-interface" class="slide">
 		
 		<h2>The interface</h2>
+		<ul>
+			<li><code><a href="#resultconsole-init">init()</a></code> - sets up event handler which calls <code>toggle()</code></li>
+			<li><code><a href="#resultconsole-toggle">toggle()</a></code> - calls <code>display()</code> or <code>hide()</code></li>
+			<li><code><a href="#resultconsole-display">display()</a></code> - unhides the console and calls <code>load()</code></li>
+			<li><code><a href="#resultconsole-hide">hide()</a></code> - hides the console</li>
+			<li><code><a href="#resultconsole-load">load()</a></code> - creates an AJAX request</li>
+			<li><code><a href="#resultconsole-onLoaded">onLoaded()</a></code> - updates HTML</li>
+			<li><code><a href="#resultconsole-onError">onError()</a></code> - waits 100ms and calls <code>load()</code></li>
+			<li>Note: this is not good design. Do not do this in production!</li>
+		</ul>
 	
 	</section>
 
+	<section id="resultconsole-init" class="slide">
+		
+		<h2 draggable="true">ResultConsole.init()</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example08.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Example08.init()", sinon.testCase({
+
+  "test init() should setup event handler to call toggle()": function()
+  {
+    fail("Not implemented");
+  },
+  
+  "test event handler should only call toggle() for 'r'": function()
+  {
+    fail("Not implemented");
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example08.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">
+Example08=
+{
+  init: function()
+  {
+  },
+
+  toggle: function(){}
+}
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="resultconsole-toggle" class="slide">
+		
+		<h2 draggable="true">ResultConsole.toggle()</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example09.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Example09.toggle()", sinon.testCase({
+
+  "test toggle() should call display when hidden": function()
+  {
+    fail("Not implemented");
+  },
+  
+  "test toggle() should call hide when visible": function()
+  {
+    fail("Not implemented");
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example09.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">
+Example09=
+{
+  toggle: function()
+  {
+  
+  },
+  display: function(){},
+  hide: function(){}
+}
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="resultconsole-display" class="slide">
+		
+		<h2 draggable="true">ResultConsole.display()</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example10.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Example10.display()", sinon.testCase({
+
+  "test display() should unhide and clear element, then call load()": function()
+  {
+    fail("Not implemented");
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example10.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">
+Example10=
+{
+  display: function()
+  {
+    
+  },
+  load: function(){}
+}
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="resultconsole-hide" class="slide">
+		
+		<h2 draggable="true">ResultConsole.hide()</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example11.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Example11.hide()", sinon.testCase({
+
+  "test hide() should hide element": function()
+  {
+    fail("Not implemented");
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example11.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">
+Example11=
+{
+  hide: function()
+  {
+    
+  }
+}
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="resultconsole-load" class="slide">
+		
+		<h2 draggable="true">ResultConsole.load()</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example12.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Example12.load()", sinon.testCase({
+
+  "test load() should make AJAX call (success)": function()
+  {
+    fail("Not implemented");
+  },
+  
+  "test load() should make AJAX call (failure)": function()
+  {
+    fail("Not implemented");
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example12.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">
+Example12=
+{
+  load: function()
+  {
+    
+  },
+  onLoaded:function(){},
+  onError:function(){}
+}
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="resultconsole-onLoaded" class="slide">
+		
+		<h2 draggable="true">ResultConsole.onLoaded()</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example13.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Example13.onLoaded()", sinon.testCase({
+
+  "test onLoaded() should set HTML": function()
+  {
+    fail("Not implemented");
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example13.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">
+Example13=
+{
+  onLoaded: function()
+  {
+    
+  }
+}
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="resultconsole-onError" class="slide">
+		
+		<h2 draggable="true">ResultConsole.onError()</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/example14.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript">TestCase("Example14.onError()", sinon.testCase({
+
+  "test onError() should update HTML and call load() after 100ms": function()
+  {
+    /*:DOC += &lt;div id="results">Loading&lt;/div> */
+    fail("Not implemented");
+  },
+  
+  "test onError() should not call load() if hidden": function()
+  {
+    /*:DOC += &lt;div id="results" style="display:none">Loading&lt;/div> */
+    fail("Not implemented");
+  }
+
+}));
+</textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/example14.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript">
+Example14=
+{
+  onError: function()
+  {
+    
+  },
+  load:function(){}
+}
+</textarea>
+		</div>
+		
+	</section>
+
+	<section id="resultconsole-onError" class="slide">
+		
+		<h2 draggable="true">ResultConsole - complete</h2>
+		
+		<div class="codeblock test">
+			<h3><a href="examples/test/resultconsole.js" class="fill">Complete</a> Test</h3>
+			<textarea class="code" mode="javascript"></textarea>
+		</div>
+		
+		<div class="codeblock src">
+			<h3><a href="examples/src/resultconsole.js" class="fill">Complete</a> Code</h3>
+			<textarea class="code" mode="javascript"></textarea>
+			<button class="eval">Eval</button>
+		</div>
+		
+	</section>
+	
 	<section id="acknowledgements" class="slide">
 		
 		<h2>Acknowledgements</h2>
@@ -455,7 +735,7 @@ Examples.Example07 = function(callbackObj)
 	</section>
 
 
-
+<pre id="results" style="display:none;"></pre>
 
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>

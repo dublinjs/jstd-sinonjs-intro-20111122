@@ -1,0 +1,2 @@
+Unexpected Runner Condition: The patterns/paths /mnt/devel/presentations/jstd-sinonjs-intro-20111122/drop-here (/mnt/devel/presentations/jstd-sinonjs-intro-20111122/drop-here)  used in the configuration file didn't match any file, the files patterns/paths need to be relative /mnt/devel/presentations/jstd-sinonjs-intro-20111122/drop-here
+ Use --runnerMode DEBUG for more information.

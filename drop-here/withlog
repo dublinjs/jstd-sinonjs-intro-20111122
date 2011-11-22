@@ -1,0 +1,3 @@
+java -jar ~/Downloads/JsTestDriver-1.3.3d.jar --tests all --server http://127.0.0.1:4224 --verbose --reset >results.txt
+rm tmp.js
+

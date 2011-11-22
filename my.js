@@ -31,4 +31,9 @@ $(function(){
 		e.preventDefault();
 	});
 
+	$('.eval').live('click', function(e)
+	{
+		eval($(this).parents('.codeblock').find('textarea').data('codemirroreditor').getValue());		
+	});
+
 });
